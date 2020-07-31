@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs'); //Require bcrypt
 const db = require('../models'); //Require db from models directory
-
-
+const bodyParser = require('body-parser');//parse the bodies of all incoming requests
 
 // body-parser
+let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // database link to express
 
@@ -16,8 +16,10 @@ router.get('/register', (req, res) => {
 })
 
 //Capture username, password and email from registration.ejs. 
-router.post('/register', (req, res) => {
+router.post('/register', urlencodedParser, (req, res) => {
 
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
     let password = req.body.password;
     let email = req.body.email;
 
@@ -27,7 +29,7 @@ router.post('/register', (req, res) => {
         firstName: firstName,
         lastName: lastName,
         email: email,
-        pwHex: passwordEncrypted, 
+        pwHex: passwordEncrypted
     })
     .then(user => {
         res.redirect('/login'); //if password matches will redirect to login page
