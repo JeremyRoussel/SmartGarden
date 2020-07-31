@@ -20,5 +20,13 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.3"
   },
-  "description": ""
+  "description": "A way to make sure your plants stay with you through the rona.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremyRoussel/SmartGarden.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JeremyRoussel/SmartGarden/issues"
+  },
+  "homepage": "https://github.com/JeremyRoussel/SmartGarden#readme"
 }
