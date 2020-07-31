@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const db = require('../models'); 
-const bodyParser = require('body-parser');
+const bcrypt = require('bcryptjs'); //Require bcrypt
+const db = require('../models'); //Require db from models directory
+const bodyParser = require('body-parser');//parse the bodies of all incoming requests
 
 // body-parser
 let urlencodedParser = bodyParser.urlencoded({extended: false});
@@ -13,34 +13,35 @@ router.get('/login', (req, res) => {
 
 // database link to express
 router.post('/login', async (req, res) => {
-
+    console.log('router.post test');
   try {
       let email = req.body.email; // form
       let password = req.body.password; // form
-
+        console.log(email, password);
       let results = await db.users.findAll({ where: {email: email}});
       // results is an array of objects from database 
-
+        console.log(results);
       if (results.length > 0) {
           // test password 
-
-          bcrypt.compare(password, results[0].password, (err, response) => {
+            console.log(password, results[0].pwHex, 'test1');
+          bcrypt.compare(password, results[0].pwHex, (err, response) => { //encrypt the re-entry of password and compare to original 
               // there is a match in passwords
               if (response) {
-                  req.session.email = email;  // username is an object on the session object
-                  req.session.role = 1;
-                  res.redirect('/')
+                  req.session.email = email;  // email is an object on the session object
+                    res.redirect('/');           
               }
               else {
+                  console.log('line 34');
                   // no match found for passwords
-                  res.redirect('/error');
+                  res.redirect('/404');
               }
           })
       }
 
   }
   catch {
-      res.status(211).redirect('/error')
+      console.log('line 43');
+      res.status(211).redirect('/404');
   }
 
 })
