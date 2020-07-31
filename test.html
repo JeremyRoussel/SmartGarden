@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGarden</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="../public/css/login.css">
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
   <%- include ('partials/elements/navbar.ejs') %>
@@ -13,19 +14,23 @@
   <section class="home">
 
     <div class="jumbo">
-            <h1 class="jumbo-text">Login</h1>
+            <h1 class="jumbo-text">Register</h1>
     </div>
-
+   
   </section>
 
-  <form action="/login" method="POST">
+  <section class="form"> 
+        <!--Form section starts here  -->
+      <form action="/register" method="POST">
 
-    email: <input type="text" name="email"> <br>
-    password: <input type="password" name="password"> <br>
+        username: <input type="text" name="username"> <br>
+        email: <input type="text" name="email"> <br>
+        password: <input type="password" name="password"> <br>
 
+        <input type="submit">
+      </form>
 
-    <input type="submit">
-</form>
+    </section>
 
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
