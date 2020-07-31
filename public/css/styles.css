@@ -8,8 +8,6 @@ body {
     font-size: 62.5%;
     font-size: 10px;
 }
-/*-- Inspiration taken from abdo steif -->
-/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
 
 /* Navbar section */
 
@@ -116,10 +114,6 @@ body {
     /* overflow: hidden; */
 }
 
-/* .post-splash {
-    height: 500px; 
-} */
-
 .jumbo {
     position: absolute;
     width: 100%;
@@ -131,46 +125,6 @@ body {
 .jumbo-text {
     font-size: 10rem;
 }
-
-.myH2 {
-	text-align:center;
-	font-size: 4rem;
-}
-
-.myP {
-	text-align: justify;
-	padding-left:15%;
-	padding-right:15%;
-	font-size: 20px;
-}
-
-.albums{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.album-container{
-    display: flex;
-    flex-direction: column;
-    /* width: 200px;
-    height: 200px; */
-    margin: 5px;
-    box-sizing: border-box;
-}
-
-.album-images{
-    width: 200px;
-    height: 200px;
-    box-sizing: border-box;
-    border: 3px solid white;
-}
-
-.album-images:hover {
-    border: 3px solid #6f7170;
-}
-
 
 /* Media qurey section */
 

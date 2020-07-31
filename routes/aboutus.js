@@ -6,7 +6,7 @@ const router = express.Router();
 // database link to express
 
 
-router.get('/aboutus', (req, res) => {
+router.get('/aboutus(/)?', (req, res) => {
 
     res.render('aboutus')
 })
