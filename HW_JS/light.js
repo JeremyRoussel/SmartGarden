@@ -1,15 +1,21 @@
-var five = require('johnny-five'),
-    board,
-    photoresistor;
+const { Board, Thermometer, photoresistor, Sensor} = require("johnny-five");
 
-board = new five.Board();
 
-board.on('ready', function () {
+const board = new Board();
+
+
+
+board.on("ready", () => {
     // Create a new `photoresistor` hardware instance.
-    photoresistor = new five.Sensor({
+    const photoresistor = new Sensor({
         pin: 'A0',
-        freq: 250,
+        freq: 2500,
     });
+    const thermometer = new Thermometer({
+        controller: "LM35",
+        pin: "A3",
+        freq: 2500,
+      });
 
     // Inject the `sensor` hardware into
     // the Repl instance's context;
@@ -22,4 +28,13 @@ board.on('ready', function () {
     photoresistor.on('data', function () {
         console.log('Light level: ', this.scaleTo([0, 150]),'%');
     });
+    thermometer.on("data", () => {
+        const {fahrenheit} = thermometer;
+        console.log(" Temperature: ", fahrenheit,"F");
+        console.log("--------------------------------------");
+      });
 });
+
+
+
+  
