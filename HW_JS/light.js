@@ -8,7 +8,7 @@ board.on('ready', function () {
     // Create a new `photoresistor` hardware instance.
     photoresistor = new five.Sensor({
         pin: 'A0',
-        freq: 2500,
+        freq: 250,
     });
 
     // Inject the `sensor` hardware into
@@ -20,6 +20,6 @@ board.on('ready', function () {
 
     // "data" get the current reading from the photoresistor
     photoresistor.on('data', function () {
-        console.log(this.value);
+        console.log('Light level: ', this.scaleTo([0, 150]),'%');
     });
 });
