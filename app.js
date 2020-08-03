@@ -45,9 +45,6 @@ app.use(require('./routes/404')); // error page
 
 app.use(require('./routes/aboutus')); // about us
 
-
-
-
 // Start Server
 
 let server = app.listen(PORT, () => {
