@@ -41,5 +41,43 @@ router.get('/api', (req, res) => {
     // res.json(data)
 })
 
+// Ask for plants from a specific user
+router.get('/api/user/:id', (req, res) => {
+
+    let userID = parseInt(req.params.id) //turn string into integer value of plant ID
+
+    db.plants.findAll({
+        where: {
+            plantOwner: userID
+        }
+    })
+    .then((result) => {
+        res.send(result)
+    })
+    .catch((error) => {
+        res.send(error)
+    })
+    
+})
+
+// Ask for data about a specific plant
+router.get('/api/plant/:id', (req, res) => {
+
+    let plantID = parseInt(req.params.id) //turn string into integer value of plant ID
+
+    db.data.findAll({
+        where: {
+            plantID: plantID
+        }
+    })
+    .then((result) => {
+        res.send(result)
+    })
+    .catch((error) => {
+        res.send(error)
+    })
+
+})
+
 
 module.exports = router;
