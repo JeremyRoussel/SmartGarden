@@ -45,7 +45,7 @@ app.use(require('./routes/404')); // error page
 
 app.use(require('./routes/aboutus')); // about us
 
-app.use(require('./routes/protected')); //protects api.js, new.js, plant.js routes
+
 
 
 // Start Server
