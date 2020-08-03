@@ -1,3 +1,5 @@
 node_modules/
 .env
-config
+config/
+.DS_Store
+public/.DS_Store

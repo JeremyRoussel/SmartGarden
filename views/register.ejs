@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGarden</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
   <%- include ('partials/elements/navbar.ejs') %>
@@ -14,14 +15,32 @@
     <div class="jumbo">
             <h1 class="jumbo-text">Register</h1>
     </div>
-
+   
   </section>
 
-    <div class="post-splash">
-        
-       
+  <div class="formBox">
 
-    </div>
+    <form class="form-style-9" action="/register" method="POST">
+      <ul>
+        <li>
+            <input type="text" name="firstName" class="field-style field-full" placeholder="First Name" />
+        </li>
+        <li>
+            <input type="text" name="lastName" class="field-style field-full" placeholder="Last Name" />
+        </li>
+        <li>
+            <input type="text" name="email" class="field-style field-full align-none" placeholder="Email" />
+        </li>
+        <li>
+            <input type="password" name="password" class="field-style field-full" placeholder="Password" />
+        </li>
+        <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Register" />
+        </li>
+      </ul>
+      </form>
+
+  </div>
 
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
