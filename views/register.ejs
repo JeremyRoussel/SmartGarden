@@ -18,19 +18,29 @@
    
   </section>
 
-  <section class="form"> 
-        <!--Form section starts here  -->
-      <form action="/register" method="POST">
+  <div class="formBox">
 
-        first name: <input type="text" name="firstName"> <br>
-        last name: <input type="text" name="lastName"> <br>
-        email: <input type="text" name="email"> <br>
-        password: <input type="password" name="password"> <br>
-
-        <input type="submit">
+    <form class="form-style-9" action="/register" method="POST">
+      <ul>
+        <li>
+            <input type="text" name="firstName" class="field-style field-full" placeholder="First Name" />
+        </li>
+        <li>
+            <input type="text" name="lastName" class="field-style field-full" placeholder="Last Name" />
+        </li>
+        <li>
+            <input type="text" name="email" class="field-style field-full align-none" placeholder="Email" />
+        </li>
+        <li>
+            <input type="password" name="password" class="field-style field-full" placeholder="Password" />
+        </li>
+        <li>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Register" />
+        </li>
+      </ul>
       </form>
 
-    </section>
+  </div>
 
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
