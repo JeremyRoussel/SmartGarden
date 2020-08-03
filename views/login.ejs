@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGarden</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="../public/css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
   <%- include ('partials/elements/navbar.ejs') %>
@@ -18,14 +18,23 @@
 
   </section>
 
-  <form action="/login" method="POST">
+<div class="formBox">
 
-    email: <input type="text" name="email"> <br>
-    password: <input type="password" name="password"> <br>
+  <form class="form-style-9" action="/login" method="POST">
+    <ul>
+      <li>
+          <input type="text" name="email" class="field-style field-full" placeholder="Email" />
+      </li>
+      <li>
+          <input type="password" name="password" class="field-style field-full" placeholder="Password" />
+      </li>
+      <li>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Login" />
+      </li>
+    </ul>
+    </form>
 
-
-    <input type="submit">
-</form>
+</div>
 
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
