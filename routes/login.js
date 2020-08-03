@@ -13,26 +13,25 @@ router.get('/login', (req, res) => {
 
 // database link to express
 router.post('/login', async (req, res) => {
-    console.log('router.post test');
   try {
       let email = req.body.email; // form
       let password = req.body.password; // form
-        console.log(email, password);
       let results = await db.users.findAll({ where: {email: email}});
+
       // results is an array of objects from database 
-        console.log(results);
       if (results.length > 0) {
-          // test password 
-            console.log(password, results[0].pwHex, 'test1');
+          
+        // test password             
           bcrypt.compare(password, results[0].pwHex, (err, response) => { //encrypt the re-entry of password and compare to original 
-              // there is a match in passwords
+              
+            // there is a match in passwords
               if (response) {
                   req.session.email = email;  // email is an object on the session object
                     res.redirect('/');           
               }
               else {
-                  console.log('line 34');
-                  // no match found for passwords
+                  
+                // no match found for passwords
                   res.redirect('/404');
               }
           })
@@ -40,7 +39,6 @@ router.post('/login', async (req, res) => {
 
   }
   catch {
-      console.log('line 43');
       res.status(211).redirect('/404');
   }
 
