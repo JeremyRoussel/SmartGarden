@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../auth/auth'); //function to proctect the route
 const db = require('../models'); //Require db from models directory
 const bodyParser = require('body-parser');//parse the bodies of all incoming requests
+
 
 // body-parser
 let jsonParser = bodyParser.json()
@@ -35,7 +37,7 @@ router.post('/api', jsonParser, (req, res) => {
     })
 })
 
-router.get('/api', (req, res) => {
+router.get('/api', auth, (req, res) => {
 
     res.send('Data comes from here')
     // res.json(data)
