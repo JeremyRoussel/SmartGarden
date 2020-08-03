@@ -61,16 +61,16 @@ board.on('ready', () => {
     // Create a new `photoresistor` hardware instance.
     const pResistor = new Sensor({
         pin: 'A0',
-        freq: 60000,
+        freq: 600000,
     });
     const thermometer = new Thermometer({
         controller: 'LM35',
         pin: 'A3',
-        freq: 60000,
+        freq: 600000,
     });
     const mSensor = new Sensor({
         pin: 'A5',
-        freq: 60000,
+        freq: 600000,
     });
 
     // Inject the `sensor` hardware into
