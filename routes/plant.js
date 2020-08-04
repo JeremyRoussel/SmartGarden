@@ -16,5 +16,6 @@ router.get('/plant/(:id)?', (req, res) => {
     })
 })
 
+router.post()
 
 module.exports = router;

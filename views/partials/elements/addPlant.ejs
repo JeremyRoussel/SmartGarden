@@ -1,0 +1,39 @@
+
+
+<button onclick="document.getElementById('plantID').style.display='block'" style="width:auto;">Add a Plant</button>
+
+<div id="plantID" class="modal">
+  
+  <form class="modal-content animate" action="/partials/elements/addPlant" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('plantID').style.display='none'" class="close" title="Close Modal">&times;</span>
+          </div>
+
+    <div class="container">
+      <input type="text" placeholder="Enter Your Plant's Name" name="uname" required>
+      
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1" >
+          <option>--Choose Plant Type--</option>
+          <option>Anthurium</option>
+          <option>Croton</option>
+          <option>Lucky Bamboo</option>
+          <option>Orchid</option>
+          <option>Pothos</option>
+          <option>Red Aglaonema</option>
+          <option>Snake Plant</option>
+          <option>Peace Lily</option>
+          <option>Succulents</option>
+          <option>ZZ Plant</option>
+          <option>Ponytail Palm</option>
+        </select>
+      </div>
+
+      <button type="submit">Let's Grow It</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('plantID').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>

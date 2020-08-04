@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../auth/auth'); //function to proctect the route
+const auth = require('../auth/auth'); //function to protect the route
 const db = require('../models'); //Require db from models directory
 const bodyParser = require('body-parser');//parse the bodies of all incoming requests
 
