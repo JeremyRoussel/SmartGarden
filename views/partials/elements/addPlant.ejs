@@ -4,32 +4,32 @@
 
 <div id="plantID" class="modal">
   
-  <form class="modal-content animate" action="/partials/elements/addPlant" method="post">
-    <div class="imgcontainer">
+  <form class="modal-content animate" action="/plant" method="POST">
+    <!-- <div class="">
       <span onclick="document.getElementById('plantID').style.display='none'" class="close" title="Close Modal">&times;</span>
-          </div>
+          </div> -->
 
     <div class="container">
-      <input type="text" placeholder="Enter Your Plant's Name" name="uname" required>
+      <input id="plantName" type="text" placeholder="Enter Your Plant's Name" name="plantName" required>
       
       <div class="form-group">
-        <select class="form-control" id="exampleFormControlSelect1" >
+        <select id="plantType" type="text" class="form-control"  name="plantType" >
           <option>--Choose Plant Type--</option>
-          <option>Anthurium</option>
-          <option>Croton</option>
-          <option>Lucky Bamboo</option>
-          <option>Orchid</option>
-          <option>Pothos</option>
-          <option>Red Aglaonema</option>
-          <option>Snake Plant</option>
-          <option>Peace Lily</option>
-          <option>Succulents</option>
-          <option>ZZ Plant</option>
-          <option>Ponytail Palm</option>
+          <option value="1">Anthurium</option>
+          <option value="2">Croton</option>
+          <option value="3">Lucky Bamboo</option>
+          <option value="4">Orchid</option>
+          <option value="5">Pothos</option>
+          <option value="6">Red Aglaonema</option>
+          <option value="7">Snake Plant</option>
+          <option value="8">Peace Lily</option>
+          <option value="9">Succulents</option>
+          <option value="10">ZZ Plant</option>
+          <option value="11">Ponytail Palm</option>
         </select>
       </div>
 
-      <button type="submit">Let's Grow It</button>
+      <button type="submit">It's Grow Time</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">

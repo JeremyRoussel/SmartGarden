@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/JeremyRoussel/SmartGarden/issues"
   },
-  "homepage": "https://github.com/JeremyRoussel/SmartGarden#readme"
+  "homepage": "https://github.com/JeremyRoussel/SmartGarden#readme",
+  "devDependencies": {}
 }
