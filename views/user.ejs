@@ -18,7 +18,14 @@
   </section>
 
     <div class="post-splash">
-        
+        <div class="row">
+          <% plants.forEach(results => { %> 
+            <div><%= results.plantOwner %></div>
+            <div><%= results.plantType %></div>
+            <div><%= results.plantName %></div>
+
+          <% }) %>
+        </div>
 
     </div>
 
