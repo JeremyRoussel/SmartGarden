@@ -1,13 +1,14 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: "Quicksand", sans-serif;}
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #17445E;
   box-sizing: border-box;
+  border-radius: 3px;
 }
 
 /* Set a style for all buttons */
@@ -19,10 +20,13 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  display: inline-block;
+  font: 12px Arial, Helvetica, sans-serif;
 }
 
 button:hover {
-  opacity: 0.8;
+  background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
 }
 
 /* Extra styles for the cancel button */
@@ -32,20 +36,9 @@ button:hover {
   background-color: #f44336;
 }
 
-Center the image and position the close button
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
 .container {
   padding: 16px;
+  border-radius: 10px;
 }
 
 span.psw {
@@ -73,24 +66,17 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+  width: 40%; /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
+/* Override for some Bootstrap styling */
+#bstrapOverride .form-control {
+  padding: 18px 30px;
+  /* padding: .75rem 1.5rem; */
+  border: 1px solid #17445E;
 }
 
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
 
 /* Add Zoom Animation */
 .animate {
