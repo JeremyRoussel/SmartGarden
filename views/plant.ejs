@@ -49,6 +49,12 @@
   <script>
 
     var plantID = d3.select("#hidden").attr("value") // Get PlantID from hidden attribute
+
+    console.log(plantID);
+
+    if (plantID == ""){
+      plantID = 1
+    }
       
     var svgLight = d3.select("#light"),
       svgMoisture = d3.select("#moisture"),
