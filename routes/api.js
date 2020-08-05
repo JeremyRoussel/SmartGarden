@@ -37,11 +37,11 @@ router.post('/api', jsonParser, (req, res) => {
     })
 })
 
-router.get('/api', auth, (req, res) => {
+// router.get('/api', auth, (req, res) => {
 
-    res.send('Data comes from here')
-    // res.json(data)
-})
+//     res.send('Data comes from here')
+//     // res.json(data)
+// })
 
 // Ask for plants from a specific user
 router.get('/api/user/:id', (req, res) => {

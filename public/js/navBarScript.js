@@ -4,7 +4,7 @@
 $(window).scroll(function() {
     if ($(document).scrollTop() > 35) {
         $('.nav').addClass('affix');
-        console.log("OK");
+        // console.log("OK");
     } else {
         $('.nav').removeClass('affix');
     }
