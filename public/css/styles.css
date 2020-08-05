@@ -126,6 +126,15 @@ body {
     font-size: 10rem;
 }
 
+.bar {
+    fill: rgb(217, 255, 0);
+    border: 1px solid black;
+}
+.bar2 {
+    fill: steelblue;
+    border: 1px solid black;
+}
+
 /* Media qurey section */
 
 @media all and (max-width:700px){
