@@ -2,34 +2,36 @@
 
 <button onclick="document.getElementById('plantID').style.display='block'" style="width:auto;">Add a Plant</button>
 
-<div id="plantID" class="modal">
+<div id="bstrapOverride">
+  <div id="plantID" class="modal">
   
-  <form class="modal-content animate" action="/plant" method="POST">
-    <div class="container">
-      <input id="plantName" type="text" placeholder="Enter Your Plant's Name" name="plantName" required>
-      
-      <div class="form-group">
-        <select id="plantType" type="text" class="form-control"  name="plantType" >
-          <option>--Choose Plant Type--</option>
-          <option value="1">Anthurium</option>
-          <option value="2">Croton</option>
-          <option value="3">Lucky Bamboo</option>
-          <option value="4">Orchid</option>
-          <option value="5">Pothos</option>
-          <option value="6">Red Aglaonema</option>
-          <option value="7">Snake Plant</option>
-          <option value="8">Peace Lily</option>
-          <option value="9">Succulents</option>
-          <option value="10">ZZ Plant</option>
-          <option value="11">Ponytail Palm</option>
-        </select>
+    <form class="modal-content animate" action="/plant" method="POST">
+      <div class="container">
+        <input id="plantName" type="text" placeholder="Enter Your Plant's Name" name="plantName" required>
+        
+        <div class="form-group">
+          <select id="plantType" type="text" class="form-control"  name="plantType" >
+            <option>--Choose Plant Type--</option>
+            <option value="1">Anthurium</option>
+            <option value="2">Croton</option>
+            <option value="3">Lucky Bamboo</option>
+            <option value="4">Orchid</option>
+            <option value="5">Pothos</option>
+            <option value="6">Red Aglaonema</option>
+            <option value="7">Snake Plant</option>
+            <option value="8">Peace Lily</option>
+            <option value="9">Succulents</option>
+            <option value="10">ZZ Plant</option>
+            <option value="11">Ponytail Palm</option>
+          </select>
+        </div>
+  
+        <button type="submit">It's Grow Time</button>
       </div>
-
-      <button type="submit">It's Grow Time</button>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('plantID').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
-  </form>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('plantID').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
+    </form>
+  </div>
 </div>
