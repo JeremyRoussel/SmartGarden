@@ -37,7 +37,7 @@ router.post('/user', async (req, res) => {
             })
             .then(user => {
 
-                res.send('database create a record')
+                res.redirect('/user')
                 
             })
             .catch(error => {
