@@ -1,28 +1,28 @@
 
 
-<button onclick="document.getElementById('plantID').style.display='block'" style="width:auto;">Add a Plant</button>
+<button onclick="document.getElementById('plantID').style.display='block'" style="width:auto;" class="form-style-9">Add a Plant</button>
 
 <div id="bstrapOverride">
   <div id="plantID" class="modal">
   
-    <form class="modal-content animate" action="/plant" method="POST">
+    <form class="modal-content animate" action="/user" method="POST">
       <div class="container">
         <input id="plantName" type="text" placeholder="Enter Your Plant's Name" name="plantName" required>
         
         <div class="form-group">
           <select id="plantType" type="text" class="form-control"  name="plantType" >
             <option>--Choose Plant Type--</option>
-            <option value="1">Anthurium</option>
-            <option value="2">Croton</option>
-            <option value="3">Lucky Bamboo</option>
-            <option value="4">Orchid</option>
-            <option value="5">Pothos</option>
-            <option value="6">Red Aglaonema</option>
-            <option value="7">Snake Plant</option>
-            <option value="8">Peace Lily</option>
-            <option value="9">Succulents</option>
-            <option value="10">ZZ Plant</option>
-            <option value="11">Ponytail Palm</option>
+            <option value="Anthurium">Anthurium</option>
+            <option value="Croton">Croton</option>
+            <option value="Lucky Bamboo">Lucky Bamboo</option>
+            <option value="Orchid">Orchid</option>
+            <option value="Pothos">Pothos</option>
+            <option value="Red Aglaonema">Red Aglaonema</option>
+            <option value="Snake Plant">Snake Plant</option>
+            <option value="Peace Lily">Peace Lily</option>
+            <option value="Succulents">Succulents</option>
+            <option value="ZZ Plant">ZZ Plant</option>
+            <option value="Ponytail Palm">Ponytail Palm</option>
           </select>
         </div>
   
