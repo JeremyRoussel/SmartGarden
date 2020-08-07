@@ -36,9 +36,12 @@ router.post('/user', async (req, res) => {
                 plantType: plantType         
             })
             .then(user => {
-
-                res.redirect('/user')
-                
+                // console.log('render');
+                // res.render('user', {
+                //     plantName: plantName,
+                //     plantType: plantType
+                // })
+                res.send('/user');
             })
             .catch(error => {
                 console.log('error inside of create catch');
