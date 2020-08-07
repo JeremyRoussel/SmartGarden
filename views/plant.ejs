@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGarden</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <link rel="stylesheet" href="/css/plant.css">
+    <!-- <link rel="stylesheet" href="/css/plant.css"> -->
 </head>
 <body>
-  <%- include ('partials/elements/navbarPlant.ejs') %>
+
+    <%- include ('partials/elements/navbarPlant.ejs') %>
+
+  
    
   <section class="home">
 
     <div class="jumbo">
-            <h1 class="jumbo-text">Plant</h1>
+            <h1 class="jumbo-text">(Plant Name)</h1>
     </div>
 
   </section>
@@ -45,125 +48,8 @@
     </div>
 
     <div id="hidden" value="<%- plantID %>" > </div>
-
-  <script>
-
-    var plantID = d3.select("#hidden").attr("value") // Get PlantID from hidden attribute
-
-    console.log(plantID);
-
-    if (plantID == ""){
-      plantID = 1
-    }
-      
-    var svgLight = d3.select("#light"),
-      svgMoisture = d3.select("#moisture"),
-      margin = 200,
-      width = svgLight.attr("width") - margin,
-      height = svgLight.attr("height") - margin,
-      barW = width-margin
-
-    svgLight.append("text")
-       .attr("transform", "translate(100,0)")
-       .attr("x", width/4)
-       .attr("y", 50)
-       .attr("font-size", "24px")
-       .text("Light Graph")
-
-    svgMoisture.append("text")
-       .attr("transform", "translate(100,0)")
-       .attr("x", width/4)
-       .attr("y", 50)
-       .attr("font-size", "24px")
-       .text("Moisture Graph")
-
-    var gLight = svgLight.append("g")
-               .attr("transform", "translate(" + 100 + "," + 100 + ")");
-
-    var gMoisture = svgMoisture.append("g")
-               .attr("transform", "translate(" + 100 + "," + 100 + ")");
-
-      d3.json('http://localhost:3000/api/plant/'+plantID)
-      .then(function(data) {
-
-        data = data.slice(-100)
-
-        var strictIsoParse = d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")
-
-        var start = strictIsoParse(data[0].createdAt)
-        var end = strictIsoParse(data[99].createdAt)
-
-        var xScale = d3.scaleTime()
-          .domain([start, end])
-          .range([0, width-margin/2])
-
-        var yScale = d3.scaleLinear()
-          .domain([0, 100])
-          .range([height, 0])
-
-
-        gLight.append("g")
-          .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(xScale))
-          .append("text")
-          .attr("y", 50)
-          .attr("x", width-margin/2 - 50)
-          .attr("text-anchor", "end")
-          .attr("stroke", "black")
-          .text("Time of Day");
-
-        gLight.append("g")
-         .call(d3.axisLeft(yScale))
-         .append("text")
-         .attr("transform", "rotate(-90)")
-         .attr("y", 6)
-         .attr("dy", "-5.1em")
-         .attr("text-anchor", "end")
-         .attr("stroke", "black")
-         .text("Light Level");
-
-        gLight.selectAll(".bar")
-         .data(data)
-         .enter().append("rect")
-         .attr("class", "bar")
-         .attr("x", function(d) { return xScale(strictIsoParse(d.createdAt)) }) //d is row object
-         .attr("y", function(d) { return yScale(d.light); })
-         .attr("width", barW/100)
-         .attr("height", function(d) { return height - yScale(d.light); });
-
-        gMoisture.append("g")
-          .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(xScale))
-          .append("text")
-          .attr("y", 50)
-          .attr("x", width-margin/2 - 50)
-          .attr("text-anchor", "end")
-          .attr("stroke", "black")
-          .text("Time of Day");
-
-        gMoisture.append("g")
-         .call(d3.axisLeft(yScale))
-         .append("text")
-         .attr("transform", "rotate(-90)")
-         .attr("y", 6)
-         .attr("dy", "-5.1em")
-         .attr("text-anchor", "end")
-         .attr("stroke", "black")
-         .text("Moisture Level");
-
-        gMoisture.selectAll(".bar2")
-         .data(data)
-         .enter().append("rect")
-         .attr("class", "bar2")
-         .attr("x", function(d) { return xScale(strictIsoParse(d.createdAt)) }) //d is row object
-         .attr("y", function(d) { return yScale(d.moisture); })
-         .attr("width", barW/100)
-         .attr("height", function(d) { return height - yScale(d.moisture); });
-
-      });
-      
-
-  </script>
+  
+  <script src="/js/plantGraphs.js"></script>
 
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
