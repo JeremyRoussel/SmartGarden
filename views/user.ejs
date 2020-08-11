@@ -13,28 +13,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+    <!-- Navbar -->
     <%- include ('partials/elements/navbarUser.ejs') %>
 
     <section class="home">
   
       <div class="jumbo">
-              <h1 class="jumbo-text">User</h1>
+              <h1 class="jumbo-text">My Plants</h1>
       </div>
   
     </section>
+<!-- Modal button -->
 <div class="formBox">
   <%- include ('partials/elements/addPlant.ejs') %> 
 </div>
    
-
-    <div class="card border-primary">
-        <% plants.forEach(results => { %> 
-          <h1 class="card-title"><%= results.id %></h1>
-          <h1><%= results.plantType %></h1>
-          <div><%= results.plantName %></div>
-          <!-- <a href="#" class="btn btn-primary btn-lg">View Plant Stats</a> -->
-        <% }) %>
-    </div>
+<!-- Cards for plant name and type -->
+<div class="container">
+  <%- include ('partials/elements/plantList.ejs') %> 
+</div>
 
 
     <!-- Optional JavaScript -->
