@@ -28,7 +28,7 @@ router.post('/login', async (req, res) => {
               if (response) {
                 req.session.id = results[0].id //userid is an object on the session object
                   req.session.email = email;  // email is an object on the session object
-                    res.redirect('/user');           
+                    res.redirect(`/user/${results[0].id}`);           
               }
               else {
                   

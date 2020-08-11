@@ -10,7 +10,7 @@ router.get('/user(/)?(:id)?', (req, res) => {
    
         let user = req.params.id  // Identify the parameter from the URI
            
-        db.plants.findAll()
+        db.plants.findAll({ where: {plantOwner: user}})
             .then(results => {
                 res.render('user', {
                     plants: results
