@@ -10,7 +10,14 @@ router.get('/user(/)?(:id)?', (req, res) => {
     console.log("made into router.get");
    
         let user = req.params.id  // Identify the parameter from the URI
-           
+
+        console.log(user);
+        console.log(typeof user);
+        
+        if (typeof user == "undefined") {
+            user = "1"
+        }
+
         db.plants.findAll({ where: {plantOwner: user}})
             .then(results => {
                 res.render('user', {
