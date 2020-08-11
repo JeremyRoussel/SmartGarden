@@ -5,6 +5,7 @@ const axios = require('axios')
 const d3 = require('d3')
 const db = require('../models'); //Require db from models directory
 const bodyParser = require('body-parser');//parse the bodies of all incoming requests
+const auth = require('../auth/auth'); //function to protect the route
 
 
 router.get('/plant/(:id)?', (req, res) => {
