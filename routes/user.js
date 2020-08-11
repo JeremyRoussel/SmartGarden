@@ -6,23 +6,28 @@ const bodyParser = require('body-parser');//parse the bodies of all incoming req
 
 router.get('/user(/)?(:id)?', (req, res) => {
 
-    console.log(`id address on the session: ${req.session.id}`)
-
-    let user = req.params.id  // Identify the parameter from the URI 
-
-
-    res.render('user', {   // Send the required data to the render
-        user: user,
-    })
+    console.log("made into router.get");
+   
+        let user = req.params.id  // Identify the parameter from the URI
+           
+        db.plants.findAll()
+            .then(results => {
+                res.render('user', {
+                    plants: results
+                })
+            })
+                    
+        .catch((error => {
+            res.redirect('/404'); 
+        }))
 })
+
 
 //Capture Plant Name and Plant Type from user.ejs
 router.post('/user', async (req, res) => {
 
      
     try {
-
-        console.log(`email address on the session: ${req.session.email}`)
         
         let plantName = req.body.plantName;
         let plantType = req.body.plantType;
@@ -30,7 +35,7 @@ router.post('/user', async (req, res) => {
     
         console.log(`plantName: ${plantName} plantType: ${plantType} results: ${results}`)
         if(results.length > 0) {
-            console.log(results);
+            
             //creates the attributes in the plants table for plantType and plantName
             db.plants.create({
                 plantOwner: results[0].id,  //first index of findall where email matches
@@ -39,9 +44,9 @@ router.post('/user', async (req, res) => {
             })
             .then(user => {
 
-                res.redirect('/user')
-                
+                res.redirect('/user')                
             })
+            
             .catch(error => {
                 console.log('error inside of create catch');
                 res.redirect('/404'); //will redirect to 404 error page
