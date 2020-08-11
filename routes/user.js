@@ -22,6 +22,7 @@ router.get('/user(/)?(:id)?', (req, res) => {
         }))
 })
 
+// database link to express
 
 //Capture Plant Name and Plant Type from user.ejs
 router.post('/user', async (req, res) => {

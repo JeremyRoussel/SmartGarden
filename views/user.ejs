@@ -2,48 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGarden</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/addPlantModal.css">
-</head>
-<body>
-  <%- include ('partials/elements/navbarUser.ejs') %>
+    <link rel="stylesheet" href="/css/user.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <%- include ('partials/elements/navbarUser.ejs') %>
 
-  <section class="home">
+    <section class="home">
+  
+      <div class="jumbo">
+              <h1 class="jumbo-text">User</h1>
+      </div>
+  
+    </section>
 
-    <div class="jumbo">
-            <h1 class="jumbo-text">User</h1>
+    <div class="card border-primary">
+        <% plants.forEach(results => { %> 
+          <h1 class="card-title"><%= results.id %></h1>
+          <h1><%= results.plantType %></h1>
+          <div><%= results.plantName %></div>
+          <!-- <a href="#" class="btn btn-primary btn-lg">View Plant Stats</a> -->
+        <% }) %>
     </div>
 
-  </section>
 
-    <div class="post-splash">
-        
-
-    </div>
-    <div class="formBox">
-      <%- include ('partials/elements/addPlant.ejs') %>
-    </div>
-
-    <div id="plantID">
-
-    </div>
-
-    <!-- <div class="formBox">
-      <%- include ('partials/elements/plantList.ejs') %> 
-    </div> -->
-    
-
-    <!-- Jquery needed -->
+    <!-- Optional JavaScript -->
+    <script src="js/navBarScript.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-
-
-    <script src="/js/navBarScript.js"></script>
-
-    <script src="js/addPlantScript.js"></script>
-
-</body>
+  </body>
 </html>

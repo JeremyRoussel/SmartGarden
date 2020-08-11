@@ -30,5 +30,4 @@ router.get('/plant/(:id)?', (req, res) => {
 })
 
 
-
 module.exports = router;
