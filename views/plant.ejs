@@ -4,36 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGarden</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/plant.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <link rel="stylesheet" href="/css/plant.css"> -->
 </head>
 <body>
-  <%- include ('partials/elements/navbarPlant.ejs') %>
 
+    <%- include ('partials/elements/navbarPlant.ejs') %>
+
+  
+   
   <section class="home">
 
     <div class="jumbo">
-            <h1 class="jumbo-text">Plant</h1>
+            <h1 class="jumbo-text">(Plant Name)</h1>
     </div>
 
   </section>
 
     <div class="post-splash">
-        
-       
+      
+      <!-- plantID = <%- plantID %>  -->
 
     </div>
 
-    <%- include ('partials/elements/addPlant.ejs') %>
+    <div class="graphs" style="display: flex; justify-content: space-around;">
+      <div class="light-graph" style="width: 600">
+        <svg id="light" width="600" height="400"></svg>
+        <svg id="moisture" width="600" height="400"></svg>
+      </div>
+    </div>
 
+    <!-- <div class="light-graph" style="display: flex; justify-content: center;">
+      <svg id="light" width="600" height="400"></svg>
+    </div>
+
+    <div class="moisture-graph" style="display: flex; justify-content: center;">
+      <svg id="moisture" width="600" height="400"></svg>
+    </div> -->
+
+    <div id="hidden" value="<%- plantID %>" > </div>
+  
+  <script src="/js/plantGraphs.js"></script>
 
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <script src="js/navBarScript.js"></script>
-
-    <script src="js/addPlantScript.js"></script>
+    <script src="/js/navBarScript.js"></script>
 
 
 </body>

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -20,7 +21,8 @@
     "johnny-five": "^2.0.0",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.3"
+    "sequelize": "^6.3.3",
+    "serialport": "^9.0.0"
   },
   "description": "A way to make sure your plants stay with you through the rona.",
   "repository": {
@@ -30,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/JeremyRoussel/SmartGarden/issues"
   },
-  "homepage": "https://github.com/JeremyRoussel/SmartGarden#readme"
+  "homepage": "https://github.com/JeremyRoussel/SmartGarden#readme",
+  "devDependencies": {}
 }

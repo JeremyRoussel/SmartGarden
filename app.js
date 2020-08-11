@@ -14,6 +14,7 @@ const db = require('./models');
 const PORT = process.env.PORT
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());//req.body(fill everything that client is sending back to us)
 
 // link to public folder
 app.use(express.static('public'));
@@ -46,6 +47,8 @@ app.use(require('./routes/api')); // post data for a plant to database, lookup d
 app.use(require('./routes/404')); // error page
 
 app.use(require('./routes/aboutus')); // about us
+
+
 
 const {
     Board,
