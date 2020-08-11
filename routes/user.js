@@ -5,6 +5,7 @@ const db = require('../models'); //Require db from models directory
 const bodyParser = require('body-parser');//parse the bodies of all incoming requests
 
 router.get('/user(/)?(:id)?', (req, res) => {
+
     console.log("made into router.get");
    
         let user = req.params.id  // Identify the parameter from the URI
