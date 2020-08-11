@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartGarden</title>
+  <!-- <link rel="stylesheet" href="/css/homestyles.css"> -->
+</head>
+<body>
+  <!-- <div id="bootstrapOverride">
+    <%- include ('partials/elements/navbarHomepage.ejs') %>
+  </div> -->
+
+
+  <!-- <div class="row">
+    <div class="col-md-12"> -->
+      <form action="/reset/<%= token %>" method="POST">
+        <legend>Reset Password</legend>
+        <div class="form-group">
+          <label for="password">New Password</label>
+          <input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" name="confirm" value="" placeholder="Confirm password" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Update Password</button>
+        </div>
+      </form>
+    <!-- </div>
+  </div> -->
+
+
+      <!-- Jquery needed -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <!-- <script src="js/navBarScript.js"></script> -->
+
+</body>
+</html>

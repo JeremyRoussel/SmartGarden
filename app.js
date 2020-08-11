@@ -48,6 +48,8 @@ app.use(require('./routes/404')); // error page
 
 app.use(require('./routes/aboutus')); // about us
 
+app.use(require('./routes/forgot')); // reset user password
+
 
 
 const {
