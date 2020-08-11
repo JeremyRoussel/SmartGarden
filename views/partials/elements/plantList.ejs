@@ -1,12 +1,12 @@
 
 
 <% plants.forEach(results => { %>
-<div class="d-inline-flex col-lg-2 col-sm-6 col-md-3">
+<div class="d-flex col-5 flex-wrap">
   <div class="text-white bg-success mb-3 card-style list-group " style="max-width: 22rem;">
     <div id="plantList" class="card-header ">Name: <%= results.plantName %></div>
     <div class="card-body">
       <h5 class="card-title">Type: <%= results.plantType %></h5>
-      <a href="#" class="btn btn-primary btn-lg">View Plant Stats</a>
+      <a href="/plant/<%-results.id%>  " class="btn btn-primary btn-lg">View Plant Stats</a>
       <p id="plantID" class="card-text"></p>
     </div>
   </div>
