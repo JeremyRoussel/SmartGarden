@@ -2,6 +2,10 @@
 
 body {font-family: "Quicksand", sans-serif;}
 
+.nav-container {
+  width: 100%;
+}
+
 /* Full-width input fields */
 input[type=text] {
   width: 100%;

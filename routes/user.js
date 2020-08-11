@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');//parse the bodies of all incoming req
 
 router.get('/user(/)?(:id)?', (req, res) => {
 
+    console.log(`id address on the session: ${req.session.id}`)
+
     let user = req.params.id  // Identify the parameter from the URI 
 
 
