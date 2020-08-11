@@ -14,6 +14,7 @@ const db = require('./models');
 const PORT = process.env.PORT
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());//req.body(fill everything that client is sending back to us)
 
 // link to public folder
 app.use(express.static('public'));
