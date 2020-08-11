@@ -1,8 +1,16 @@
 
-<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-    <div id="plantList" class="card-header"></div>
+
+<% plants.forEach(results => { %>
+<div class="d-inline-flex col-lg-2 col-sm-6 col-md-3">
+  <div class="text-white bg-success mb-3 card-style list-group " style="max-width: 22rem;">
+    <div id="plantList" class="card-header ">Name: <%= results.plantName %></div>
     <div class="card-body">
-      <h5 class="card-title">Success card title</h5>
+      <h5 class="card-title">Type: <%= results.plantType %></h5>
+      <a href="#" class="btn btn-primary btn-lg">View Plant Stats</a>
       <p id="plantID" class="card-text"></p>
     </div>
+  </div>
 </div>
+
+<% }) %>
+
