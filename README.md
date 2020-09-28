@@ -1,5 +1,7 @@
 # SmartGarden
 
+Project [Live View](http://ec2-3-129-245-86.us-east-2.compute.amazonaws.com)
+
 A way to make sure your plants stay with you through the rona.
 
 You will need to create a .env file with the following text: "PORT=3000"
